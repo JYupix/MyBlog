@@ -1,0 +1,128 @@
+body {
+    background-color: rgb(26, 25, 25);
+}
+
+/* BANNER */
+.banner {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+.banner img {
+    width: 100%; /* Ajuste del tamaño de la imagen */
+    max-height: 500px; /* Altura máxima de la imagen */
+    opacity: 0.8;
+    display: block;
+    margin: 0 auto; /* Centrar la imagen horizontalmente */
+}
+.banner .content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    padding: 0 15px;
+}
+.banner h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+.banner p {
+    font-size: 1rem;
+    margin-bottom: 30px;
+}
+.banner .btn {
+    font-size: 1rem;
+}
+@media (min-width: 768px) {
+    .banner h1 {
+        font-size: 3rem;
+    }
+    .banner p {
+        font-size: 1.25rem;
+    }
+    .banner .btn {
+        font-size: 1.25rem;
+    }
+}
+
+
+/* CARDS */
+.latest-posts {
+    color: white;
+}
+
+.dark-bg {
+    background-color: #343a40; /* Dark background */
+    color: white; /* White text */
+}
+.card-dark {
+    background-color: #343a40; /* Dark card background */
+    border: 1px solid white; /* White border */
+}
+.card-dark .card-title,
+.card-dark .card-text,
+.card-dark .text-muted {
+    color: white; /* White text for card content */
+}
+
+/* FORMULARIOS */
+label{
+    color: white;
+}
+
+.title-form {
+    color: white;
+}
+
+/* PROFILE CARD */
+.profile-card-2 .card-img-block{
+    float:left;
+    width:100%;
+    height:150px;
+    overflow:hidden;
+}
+.profile-card-2 .card-body{
+    position:relative;
+}
+.profile-card-2 .profile {
+  border-radius: 50%;
+  position: absolute;
+  top: -42px;
+  left: 15%;
+  max-width: 75px;
+  border: 3px solid rgba(255, 255, 255, 1);
+  -webkit-transform: translate(-50%, 0%);
+  transform: translate(-50%, 0%);
+}
+.profile-card-2 h5{
+    font-weight:600;
+    color:#6ab04c;
+}
+.profile-card-2 .card-text{
+    font-weight:300;
+    font-size:15px;
+}
+.profile-card-2 .icon-block{
+    float:left;
+    width:100%;
+}
+.profile-card-2 .icon-block a{
+    text-decoration:none;
+}
+.profile-card-2 i {
+  display: inline-block;
+    font-size: 16px;
+    color: #6ab04c;
+    text-align: center;
+    border: 1px solid #6ab04c;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 50%;
+    margin:0 5px;
+}
+.profile-card-2 i:hover {
+  background-color:#6ab04c;
+  color:#fff;
+}
