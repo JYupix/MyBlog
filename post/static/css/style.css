@@ -126,3 +126,14 @@ label{
   background-color:#6ab04c;
   color:#fff;
 }
+
+/* BLOGS */
+.page-title-blogs {
+    color: white;
+}
+
+@media (max-width: 767px) {
+    .content-main {
+        margin-top: 20px;
+    }
+}
