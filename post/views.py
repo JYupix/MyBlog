@@ -1,9 +1,11 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth import login, authenticate, logout
 from django.contrib.auth.decorators import login_required
-from .forms import RegisterUserForm, LoginUserForm
+from .forms import RegisterUserForm, LoginUserForm, PostForm
 from django.contrib.auth.models import User
 from django.contrib import messages
+from .models import Post
+
 # Create your views here.
 def home_blog(request):
     return render(request, 'index.html', {})
@@ -53,5 +55,21 @@ def login_blog_user(request):
     return render(request, 'login.html', {'form': form})
 
 @login_required
-def all_blogs(request):
-    return render(request, 'blog.html', {'message': 'Nice'})
+def all_posts(request):
+    posts = Post.objects.all()
+    return render(request, 'posts.html', {'posts': posts})
+
+@login_required
+def new_post(request):
+    current_user = get_object_or_404(User, pk=request.user.pk)
+    if request.method == 'POST':
+        form = PostForm(request.POST)
+        if form.is_valid():
+            post = form.save(commit=False)
+            post.user = current_user
+            post.save()
+            messages.success(request, 'New post created!')
+            return redirect('post:home')
+    else:
+        form = PostForm()
+    return render(request, 'newpost.html', {'form': form})
